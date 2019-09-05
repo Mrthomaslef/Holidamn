@@ -1,0 +1,165 @@
+<html>
+
+<style>
+.container {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    color: rgb(23, 219, 56);
+    font-size: 400%;
+    size: 200%;
+}
+
+.logo {
+            width: 30px;
+            height: 30px;
+        
+}
+
+.polling_message {
+  color: black;
+  float: left;
+  margin-right: 2%;     
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  font-size: 500%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.view_port {
+  background-color: black;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cylon_eye {
+  background-color: red;
+  background-image: linear-gradient(to right, rgba( 0,0,0,0.9 ) 25%, rgba( 0,0,0,0.1 ) 50%, rgba(30, 16, 230, 0.9) 75%);
+  color: white;
+  height: 100%;
+  width: 20%;
+
+  -webkit-animation: 4s linear 0s infinite alternate move_eye;
+          animation: 4s linear 0s infinite alternate move_eye;
+}
+@-webkit-keyframes move_eye { from { margin-left:-20%; } to { margin-left:100%; }  }
+        @keyframes move_eye { from { margin-left:-20%; } to { margin-left:100%; }  }
+
+
+    </style>
+
+
+
+
+
+<body style="background-color:rgb(0, 0, 0);">
+    </body>
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <div class="container" id="compte_a_rebours"></div>
+        <script type="text/javascript">
+        
+        function compte_a_rebours()
+        {
+            var compte_a_rebours = document.getElementById("compte_a_rebours");
+        
+            var date_actuelle = new Date();
+            var date_evenement = new Date("Sep 12 00:00:00 2019");
+            var total_secondes = (date_evenement - date_actuelle) / 1000;
+        
+            var prefixe = "";
+            if (total_secondes < 0)
+            {
+                prefixe = "Compte à rebours terminé il y a "; // On modifie le préfixe si la différence est négatif
+                total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
+            }
+        
+            if (total_secondes > 0)
+            {
+                var jours = Math.floor(total_secondes / (60 * 60 * 24));
+                var heures = Math.floor((total_secondes - (jours * 60 * 60 * 24)) / (60 * 60));
+                minutes = Math.floor((total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60))) / 60);
+                secondes = Math.floor(total_secondes - ((jours * 60 * 60 * 24 + heures * 60 * 60 + minutes * 60)));
+        
+                var et = "et";
+                var mot_jour = "jours";
+                var mot_heure = "heures";
+                var mot_minute = "minutes";
+                var mot_seconde = "secondes";
+        
+                if (jours == 0)
+                {
+                    jours = '';
+                    mot_jour = '';
+                }
+                else if (jours == 1)
+                {
+                    mot_jour = "jour,";
+                }
+        
+                if (heures == 0)
+                {
+                    heures = '';
+                    mot_heure = '';
+                }
+                else if (heures == 1)
+                {
+                    mot_heure = "heure,";
+                }
+        
+                if (minutes == 0)
+                {
+                    minutes = '';
+                    mot_minute = '';
+                }
+                else if (minutes == 1)
+                {
+                    mot_minute = "minute,";
+                }
+        
+                if (secondes == 0)
+                {
+                    secondes = '';
+                    mot_seconde = '';
+                    et = '';
+                }
+                else if (secondes == 1)
+                {
+                    mot_seconde = "seconde";
+                }
+        
+                if (minutes == 0 && heures == 0 && jours == 0)
+                {
+                    et = "";
+                }
+        
+                compte_a_rebours.innerHTML = prefixe + jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + et + ' ' + secondes + ' ' + mot_seconde;
+            }
+            else
+            {
+                compte_a_rebours.innerHTML = 'Compte à rebours terminé.';
+            }
+        
+            var actualisation = setTimeout("compte_a_rebours();", 1000);
+        }
+        compte_a_rebours();
+        
+        
+        </script>
+
+        
+
+        
+<iframe src="https://www.youtube.com/embed/cvvd-9azD1M?amp;autoplay=1" width="100%" height="70%" frameborder="0" allowfullscreen></iframe> 
+
+        </body>
+
+        <a href="/index.html"><img src="image/logo2.png" class="logo"> </a>
+
+</html>

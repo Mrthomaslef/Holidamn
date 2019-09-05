@@ -1,0 +1,196 @@
+<html>
+
+
+<Head>
+    <script src="MedicCa.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+</Head>
+
+<a href="/index.html"><img src="image/logo2.png" class="logo"> </a>
+
+<style>
+
+        .body {
+            background: content-box radial-gradient(rgb(255, 17, 0), rgba(202, 126, 126, 0.795));
+            color : black;
+
+        }
+
+        .jumbotron {
+
+            background-color: rgba(235, 0, 0, 0.274);
+        }
+
+        .page-header {
+            text-align: center;
+            color: white;
+            background-color: red;     
+            width: 350px;  
+            display: block;
+            margin-left: auto;
+            border: 1px solid black;
+    margin-right: auto ; 
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+        
+.logo {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin-left: auto;
+    margin-right: auto ;
+
+        }
+
+        .card {
+            text-align: center;
+            background-color:black;
+        }
+
+        .btn1 {
+            text-align: center;
+            background-color:black;
+            color: white;
+            height: 40px;
+            width: 250px;
+            border: black 1px solid;
+           font-size: 120%;
+           font-weight:500;
+
+        }
+
+        .result {
+            font-weight: 800;
+            font-size: 120%;
+        }
+
+        .text {
+            font-size: 70%;
+            border: 1px solid black;
+
+        }
+
+        .box {
+
+        background-size: 10ch;
+        width: 7ch;
+        height: 3ch;
+        }
+        body {
+    background-color :rgba(95, 51, 43, 0.178);
+}
+        
+    
+        </style>
+
+
+<body>
+   
+        <H1>
+        
+                <div class="page-header">
+                        Cardiologie
+                </div>
+            </H1>
+
+ <div class="container">
+ <div class="jumbotron">
+    
+
+<div class="accordion" id="accordionExample">
+
+        <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            CHA2DS2-VASc
+                    </button>
+                  </h5>
+                </div>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+
+
+    <p class="input">
+        <input type="checkbox" id="IC" value="1"> Insuffisance cardiaque <br> <input type="checkbox" id="HTA" value="1"> HTA <br> <input type="checkbox" id="age" value="2"> Age >75 <br> <input type="checkbox" id="diabete" value="1"> Diabete <br>
+        <input type="checkbox" id="AVC" value="2"> ATCD d'AVC ou AIT <br> <input type="checkbox" id="vasc" value="1"> ATCD vasculaire (AOMI,SCA...) <br> <input type="checkbox" id="age2" value="1"> Age entre 65 et 75 <br> <input type="checkbox" id="sexe"
+            value="1"> Femme
+    </p>
+    <p>
+        <input class="btn btn-light" type="submit" onclick="chad()" value=" Calculer " />
+    </p>
+
+    <br> <br>
+    <div class="result" id="result"></div>
+
+    <p class="text">
+    Le sexe féminin ne compte que si la patiente a 65 ans ou plus.
+        <br> Recommendations:
+        <br> - Score à 0, FA isolée idiopathique : pas d'anticoagulation ni d'aspirine.
+        <br> - Score à 1 : anticoagulants ou aspirine après évaluation de la balance bénéfice risque type score HAS-BLED et des préférences du patient.
+        <br> - Score supérieur ou égal à 2 : indication formelle d'anticoagulation sous réserve d'un score de risque hémorragique acceptable.
+    </p>
+
+
+</div>
+</div>
+
+<br>
+
+<div class="card">
+        <div class="card-header" id="headingtwo">
+          <h5 class="mb-0">
+            <button class="btn1" type="button" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="false" aria-controls="collapsetwo">
+                    QT corrigé
+            </button>
+          </h5>
+        </div>
+</div>
+
+<div id="collapsetwo" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample">
+        <div class="card-body">
+
+    <p class="input">
+        QT mesure (en ms): <input type="number" class="box" id="QTm" value="">
+        <br> <br> Frequence cardiaque (en bpm) : <input type="number" class="box" id="FR" value=""> (pour Bazett)
+        <br><br> Intervalle R-R (en ms) : <input type="number" class="box" id="RR" value=""> (pour Fridericia : plus precis)
+        <br> <br>
+    </p>
+
+
+    <p>
+        <input class="btn btn-light" type="submit" onclick="QT()" value=" Calculer " />
+    </p>
+    <br>
+
+    <div class="result" id="resultB"></div>
+    <br>
+    <div class="result" id="resultF"></div>
+
+
+    <p class="text">
+        Valeurs usuelles : QTc ≤ 440ms chez un homme, QTc ≤ 450ms chez un femme
+        <br> Formule de Bazett : QTc = QTm / √ (60 / Fc)
+        <br> Formule de Fridericia : QTc = QTm / ∛ RR
+    </p>
+</div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+
+</div>
+</body>
+
+
+</html>

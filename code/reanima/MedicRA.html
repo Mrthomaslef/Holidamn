@@ -1,0 +1,142 @@
+<html>
+
+<Head>
+    <script src="MedicRA.js">
+    </script>
+     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+</Head>
+
+<a href="/index.html"><img src="image/logo2.png" class="logo"> </a>
+
+<style>
+
+        .body {
+            background: content-box radial-gradient(rgb(255, 17, 0), rgba(202, 126, 126, 0.795));
+            color : black;
+
+        }
+
+        .jumbotron {
+
+            background-color: rgba(97, 11, 11, 0.274);
+        }
+
+        .page-header {
+            text-align: center;
+            color: white;
+            background-color: rgb(139, 14, 14);     
+            width: 350px;  
+            display: block;
+            margin-left: auto;
+            border: 1px solid black;
+    margin-right: auto ; 
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+        
+        .logo {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin-left: auto;
+    margin-right: auto ;
+
+        }
+
+        .card {
+            text-align: center;
+            background-color:black;
+        }
+
+        .btn1 {
+            text-align: center;
+            background-color:black;
+            color: white;
+            height: 40px;
+            width: 300px;
+            border: black 1px solid;
+           font-size: 120%;
+           font-weight:500;
+
+        }
+
+        .result {
+            font-weight: 800;
+            font-size: 120%;
+        }
+
+        .text {
+            font-size: 70%;
+            border: 1px solid black;
+
+        }
+
+        .box {
+
+        background-size: 10ch;
+        width: 7ch;
+        height: 3ch;
+}
+
+body {
+    background-color :rgba(95, 51, 43, 0.178);
+}
+</style>
+
+<body>
+    <h1>
+        <div class="page-header">
+                Réanimation
+        </div>
+    </h1>
+   
+<div class="container">
+<div class="jumbotron">
+
+<div class="accordion" id="accordionExample">
+
+        <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Rapport PaO2 / FiO2
+                    </button>
+                  </h5>
+                </div>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body"> 
+
+                    <div class="input">
+                            PaO2 : <input type="number" class="box" id="PA" value="0"> mmHg
+                            <br> <br> FiO2: <input type="number" class="box" id="FI" value="0"> %
+                            <br> <br>
+                        </div>
+                        
+                        <div>
+                            <input class="button" type="submit" onclick="PF()" value=" Calculer " />
+                        </div>
+                        <br>
+                        <div class="result" id="result"></div>
+                        
+
+
+                        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+                    
+                    
+                    </div>
+                </div>
+            </div>
+ </body>
+
+
+
+
+</html>

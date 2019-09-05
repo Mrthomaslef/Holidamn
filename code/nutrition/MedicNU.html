@@ -1,0 +1,222 @@
+<html>
+
+<Head>
+    <script src="MedicNU.js">
+    </script>
+       <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+
+
+</Head>
+
+<a href="/index.html"><img src="image/logo2.png" class="logo"> </a>
+
+<style>
+
+        
+
+        .jumbotron {
+
+            background-color: rgba(221, 169, 25, 0.425);
+        }
+
+        .page-header {
+            text-align: center;
+            color: white;
+            background-color: rgb(255, 137, 41);     
+            width: 350px;  
+            display: block;
+            margin-left: auto;
+            border: 1px solid black;
+    margin-right: auto ; 
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+        
+        .logo {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin-left: auto;
+    margin-right: auto ;
+
+        }
+
+        .card {
+            text-align: center;
+            background-color:black;
+        }
+
+        .btn1 {
+            text-align: center;
+            background-color:black;
+            color: white;
+            height: 40px;
+            width: 300px;
+            border: black 1px solid;
+           font-size: 120%;
+           font-weight:500;
+
+        }
+
+
+        .result {
+            font-weight: 800;
+            font-size: 120%;
+        }
+
+        .text {
+            font-size: 70%;
+            border: 1px solid black;
+
+        }
+
+        .box {
+
+        background-size: 10ch;
+        width: 7ch;
+        height: 3ch;
+}
+
+body {
+    background-color :rgba(95, 51, 43, 0.178);
+}
+</style>
+
+<body>
+
+    <H1>
+        
+            <div class="page-header">
+                    Nutrition
+            </div>
+        </H1>
+
+<div class="container">
+<div class="jumbotron">
+  
+  
+  <div class="accordion" id="accordionExample">
+
+        <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            IMC
+                    </button>
+                  </h5>
+                </div>
+    </div>
+ 
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+    <div class="input">
+        Poids en kg : <input class="box" type="number" id="poids" value="">
+        <br> Taille en cm : <input class="box" type="number" id="taille" value="">
+    </div>
+
+    <br>
+    <div>
+        <input class="button" type="submit" onclick="IMC()" value=" Calculer " />
+    </div>
+    <br> <br>
+
+    <div class="result" id="result"></div>
+
+    <div class="text">
+    Signification du BMI pour un adulte :
+        <br>
+        < 18: dénutrition. <br> 18 à 25: poids normal.
+            <br> 25 à 30: surpoids.
+            <br> > 30: obésité.
+    </div>
+</div>
+</div>
+
+    <br>
+
+    <div class="card">
+            <div class="card-header" id="headingtwo">
+              <h5 class="mb-0">
+                <button class="btn1" type="button" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="false" aria-controls="collapsetwo">
+                        Poids theorique (Lorentz)
+                </button>
+              </h5>
+            </div>
+    </div>
+ 
+    <div id="collapsetwo" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample">
+            <div class="card-body">
+
+    <div class="input">
+        Taille en cm : <input class="box" type="number" id="taille3" value="">
+        <br> <br> Sexe :
+        <Select name="sexe" id="sexe">
+    <option value="4" > Homme
+        <option value="2.5"> Femme
+
+        </option>
+        </Select>
+        <br><br>
+    </div>
+    <div>
+        <input class="button" type="submit" onclick="PI()" value=" Calculer " />
+    </div>
+    <br><br>
+    <div class="result" id="result2"></div>
+
+</div>
+</div>
+
+<br>
+
+
+
+<div class="card">
+        <div class="card-header" id="headingthree">
+            <h5 class="mb-0">
+             <button class="btn1" type="button" data-toggle="collapse" data-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">
+                    Nutritional Risk Index
+             </h5>
+         </div>
+       </div>
+ 
+
+                
+     <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordionExample">
+            <div class="card-body">
+    <div class="input">
+        Poids actuel en kg: <input class="box" type="number" id="poids2" value="">
+        <br> Poids theorique en kg : <input class="box" type="number" id="poids3" value="">
+        <br> Taille en cm : <input class="box" type="number" id="taille2" value="">
+        <br> Albuminemie en g/L : <input class="box" type="number" id="albu" value="">
+    </div>
+
+    <br>
+    <div>
+        <input class="button" type="submit" onclick="NRI()" value=" Calculer " />
+    </div>
+
+    <br><br>
+
+    <div class="result" id="result3"></div>
+
+    <div class="text">
+     Les bornes utilisées sont spécifiques d'une population gériatrique :
+        <br> - NRI
+        < 82 : risque majeur. <br> - NRI compris entre 82 et 92 : risque modéré.
+            <br> - NRI compris entre 92 et 98 : risque bas.
+            <br> - NRI > 98 : pas de risque.
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+
+</body>
+
+
+</html

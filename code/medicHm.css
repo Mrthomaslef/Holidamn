@@ -1,0 +1,58 @@
+h1 {
+    color: white;
+    background-color: red;
+    border-color: black;
+    border-width: 5px;
+    border-style: double;
+    width: fit-content;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 6ch;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+
+.item {
+    align-content: space-around;
+    font-size: 3ch;
+    color: white;
+    margin: auto;
+    font-family: 
+    background-color: blue;
+    font-weight: 300;
+    border-color: white;
+    border-width: 3px;
+    border-style: double;
+    width: fit-content;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+
+}
+
+a:hover {
+    background-color: red;
+}
+
+.logo {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}

@@ -1,0 +1,347 @@
+<html>
+
+<Head>
+    <script src="MedicNE.js">
+    </script>
+     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+</Head>
+
+<a href="/index.html"><img src="image/logo2.png" class="logo"> </a>
+
+<style>
+
+        .body {
+            background: content-box radial-gradient(rgb(255, 17, 0), rgba(202, 126, 126, 0.795));
+            color : black;
+
+        }
+
+        .jumbotron {
+
+            background-color: rgba(25, 221, 35, 0.274);
+        }
+
+        .page-header {
+            text-align: center;
+            color: white;
+            background-color: rgb(5, 105, 5);     
+            width: 350px;  
+            display: block;
+            margin-left: auto;
+            border: 1px solid black;
+    margin-right: auto ; 
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+        
+        .logo {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin-left: auto;
+    margin-right: auto ;
+
+        }
+
+        .card {
+            text-align: center;
+            background-color:black;
+        }
+
+        .btn1 {
+            text-align: center;
+            background-color:black;
+            color: white;
+            height: 40px;
+            width: 200px;
+            border: black 1px solid;
+           font-size: 120%;
+           font-weight:500;
+
+        }
+
+        .result {
+            font-weight: 800;
+            font-size: 120%;
+        }
+
+        .text {
+            font-size: 70%;
+            border: 1px solid black;
+
+        }
+
+        .box {
+
+        background-size: 10ch;
+        width: 7ch;
+        height: 3ch;
+}
+body {
+    background-color :rgba(95, 51, 43, 0.178);
+}
+        
+    
+        </style>
+
+
+<body>
+        <H1>
+        
+                <div class="page-header">
+                        Néphrologie
+                </div>
+            </H1>
+           
+           
+ <div class="container">
+ <div class="jumbotron">
+                       
+
+    
+<div class="accordion" id="accordionExample">
+
+    
+        <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Cockroft
+                    </button>
+                  </h5>
+                </div>
+    </div>
+   
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+          
+    <div class="input">
+        Age : <input class="box" type="number" id="age" value="">
+        <br> Poids : <input class="box" type="number" id="poids" value="">
+        <br> Créatininémie : <input class="box" type="number" id="creat" value="">
+        <br> <br> Sexe :
+        <Select name="sexe" id="sexe"> 
+        <option value="1.23"> Homme
+        <option value="1.04"> Femme
+
+            </option>
+        </Select>
+    </div>
+
+    <br>
+
+    <div>
+        <input class="btn btn-light" type="submit" onclick="DFG()" value=" Calculer " />
+    </div>
+
+    <br> 
+    <div class="result" id="result"></div>
+
+    <div class="text">
+        Cockcroft et Gault
+        <br> Clairance de la créatinine = [(140 - âge) x poids x k / créatininémie]
+        <br> Avec k = 1.04 pour les femmes et k = 1.23 pour les hommes.
+    </div>
+  
+        </div>
+      </div>
+    </div>
+
+   
+  
+    <br>
+
+    
+    
+    <div class="card">
+            <div class="card-header" id="headingtwo">
+              <h5 class="mb-0">
+                <button class="btn1" type="button" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="false" aria-controls="collapsetwo">
+                        MDRD
+                </button>
+              </h5>
+            </div>
+</div>
+
+
+
+
+
+    <div id="collapsetwo" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="input">
+                        Age : <input class="box" type="number" id="age2" value="">
+                        <br> Créatininémie : <input class="box" type="number" id="creat2" value="">
+                
+                        <br> <br> Ethnie : <select name="origin" id="skin">
+                    <option value="1"> Caucasienne
+                        <option value="1.212"> Africaine
+                            <option value="1" > Asiatique
+                
+                            </option>
+                
+                            
+                        </option>
+                
+                    </select>
+                
+                        <br> <br> Sexe :
+                        <Select name="sexe" id="sexe2">
+                    <option value="1"> Homme
+                        <option value="0.742"> Femme
+                
+                        </option>
+                        </Select>
+                
+                    </div>
+                    <br> 
+                    <div>
+                        <input class="btn btn-light" type="submit" onclick="DFG2()" value=" Calculer " />
+                    </div>
+                
+                    <br> 
+                    <div class="result" id="result2"></div>
+                
+                    <div class="text">
+                        Modification of diet in renal disease
+                
+                        <br>eDFG = 175 × (Scr × 0,0113)^-1,154 × âge^-0,203 × 0,742 (si femme) × 1,212 (si noir)
+                    </div>
+                </div>
+            </div>
+
+
+
+    <br>
+    
+   <div class="card">
+     <div class="card-header" id="headingthree">
+         <h5 class="mb-0">
+          <button class="btn1" type="button" data-toggle="collapse" data-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">
+           CKD EPI
+          </h5>
+      </div>
+    </div>
+
+
+    <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordionExample">
+            <div class="card-body">
+            <div class="input">
+                Age : <input class="box" type="number" id="age3" value="">
+                <br> Créatininémie : <input class="box" type="number" id="creat3" value="">
+                <br> <br> Sexe :
+                <Select name="sexe" id="sexe3">
+            <option value="80" > Homme
+                <option value="62" > Femme
+        
+                </option>
+                </Select>
+            </div>
+            <br> 
+        
+            <div>
+                <input class="btn btn-light" type="submit" onclick="DFG3()" value=" Calculer " />
+            </div>
+        
+            <br> 
+            <div class="result" id="result3"></div>
+        
+            <div class="text">
+            DFG = 141 x min(Scr/K,1)^a x max(Scr/K,1)^-1,209 x 0,993^Age x 1,018 (si sexe = femme)
+                <br><br> Avec : Scr : créatinine sérique (µmol/L)
+                <br> K : 62 pour les femmes et 80 pour les hommes
+                <br> a : -0,329 pour les femmes et -0,411 pour les hommes
+                <br> min indique le minimum de Scr/K ou 1
+                <br> max indique le maximum de Scr/K ou 1
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+        <div class="card">
+                <div class="card-header" id="headingfour">
+                  <h5 class="mb-0">
+                    <button class="btn1" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                        FE d'urée
+                    </button>
+                  </h5>
+                </div>
+            </div>
+
+            <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                <div class="card-body">
+
+                        <p class="input">
+                                [Urée U] en g/l : <input type="number" class="box" id="AU" value="">
+                                <br> <br> [Urée P] en g/l: <input type="number" class="box" id="AP" value="">
+                                <br> <br> [Créat U] en mmol/l: <input type="number" class="box" id="CU" value=""> 
+                                <br> <br> [Créat P] en mmol/l: <input type="number" class="box" id="CP" value="">  
+                                <br> <br>
+                            </p>
+                            <p>
+                                    <input class="btn btn-light" type="submit" onclick="FEU()" value=" Calculer " />
+                                </p>
+                         <br>
+
+                         <div class="result4" id="result4"></div>
+
+                         <p class="text">
+                               Utile si patient sous diurétique : IR fonctionnelle si FE Urée < 35% 
+                                <br>          Formule: FE(AU) = (acide urique urinaire x créatinine plasmatique)/ (acide urique plasmatique x créatinine urinaire)
+
+                            </p>
+
+                        </div>
+                    </div>
+
+            <br>
+
+                <div class="card">
+                        <div class="card-header" id="headingfive">
+                          <h5 class="mb-0">
+                            <button class="btn1" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                FE du sodium
+                            </button>
+                          </h5>
+                        </div>
+                    </div>
+        
+                    <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+                        <div class="card-body">
+        
+                                <p class="input">
+                                        [Na U] en mmol/l : <input type="number" class="box" id="NU" value="">
+                                        <br> <br> [Na P] en mmol/l: <input type="number" class="box" id="NP" value="">
+                                        <br> <br> [Créat U] en mmol/l: <input type="number" class="box" id="CU" value=""> 
+                                        <br> <br> [Créat P] en mmol/l: <input type="number" class="box" id="CP" value="">  
+                                        <br> <br>
+                                    </p>
+                                    <p>
+                                            <input class="btn btn-light" type="submit" onclick="FEN()" value=" Calculer " />
+                                        </p>
+                                 <br>
+        
+                                 <div class="result5" id="result5"></div>
+        
+                                 <p class="text">
+                                      IR fonctionnelle si FE du sodium < 1% 
+                                        <br>            Formule: FE(Na) = (sodium urinaire x créatinine plasmatique)/ (sodium plasmatique x créatinine urinaire)
+        
+                                    </p>
+        
+                                </div>
+                            </div>
+        
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+
+
+</body>
+
+</html>
